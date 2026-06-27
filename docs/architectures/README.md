@@ -4,4 +4,4 @@ Design patterns, topology choices, traffic-flow patterns, and component placemen
 
 ## Pages
 
-No pages yet.
+- [Forward Proxy and Reverse Proxy](proxies.md)
