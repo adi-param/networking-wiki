@@ -1,3 +1,16 @@
+---
+blog:
+  publish: true
+  slug: forward-proxy-and-reverse-proxy
+  title: Forward Proxy and Reverse Proxy
+  description: A practical explanation of proxies, forward proxies, reverse proxies, VPNs, load balancers, and ingress controllers.
+  date: 2026-06-27
+  tags:
+    - networking
+    - proxies
+    - architecture
+---
+
 # Forward Proxy and Reverse Proxy
 
 You use proxies more often than it looks.
