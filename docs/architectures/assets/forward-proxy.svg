@@ -1,50 +1,59 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="360" viewBox="0 0 900 360" role="img" aria-labelledby="title desc">
   <title id="title">Forward proxy traffic flow</title>
-  <desc id="desc">A client sends outbound traffic to a forward proxy, and the proxy sends the request to an internet service.</desc>
+  <desc id="desc">A hand-drawn style diagram showing a client sending traffic through a forward proxy to a website.</desc>
   <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1f5f8b"/>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="10" markerHeight="10" orient="auto">
+      <path d="M1 1 L11 6 L1 11 L4 6 Z" fill="#1f5f8b"/>
     </marker>
+    <filter id="rough">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="2" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.4"/>
+    </filter>
     <style>
-      .bg { fill: #f6f5f1; }
-      .panel { fill: #ffffff; stroke: #d8d1c5; stroke-width: 2; }
-      .zone { fill: #eeebe4; stroke: #d8d1c5; stroke-width: 2; stroke-dasharray: 10 8; }
-      .title { fill: #171614; font: 700 30px Inter, ui-sans-serif, system-ui, sans-serif; }
-      .label { fill: #171614; font: 700 24px Inter, ui-sans-serif, system-ui, sans-serif; }
-      .small { fill: #65615b; font: 500 18px Inter, ui-sans-serif, system-ui, sans-serif; }
-      .note { fill: #0f766e; font: 700 17px Inter, ui-sans-serif, system-ui, sans-serif; }
-      .line { fill: none; stroke: #1f5f8b; stroke-width: 5; marker-end: url(#arrow); }
-      .device { fill: #ffffff; stroke: #171614; stroke-width: 3; }
-      .proxy { fill: #e7f5f2; stroke: #0f766e; stroke-width: 4; }
-      .internet { fill: #eef4ff; stroke: #1f5f8b; stroke-width: 4; }
+      .paper { fill: #fffdf7; }
+      .ink { fill: none; stroke: #171614; stroke-width: 2.8; stroke-linecap: round; stroke-linejoin: round; filter: url(#rough); }
+      .soft { fill: #fff8df; opacity: .72; }
+      .proxy-fill { fill: #e6f4ef; opacity: .85; }
+      .server-fill { fill: #e8f0ff; opacity: .86; }
+      .muted { fill: #65615b; font: 500 15px ui-sans-serif, system-ui, sans-serif; }
+      .title { fill: #171614; font: 800 30px ui-sans-serif, system-ui, sans-serif; }
+      .label { fill: #171614; font: 800 22px ui-sans-serif, system-ui, sans-serif; }
+      .small { fill: #65615b; font: 600 14px ui-sans-serif, system-ui, sans-serif; }
+      .accent { fill: #0f766e; font: 800 15px ui-sans-serif, system-ui, sans-serif; }
+      .arrow { fill: none; stroke: #1f5f8b; stroke-width: 3.6; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow); filter: url(#rough); }
+      .dash { fill: none; stroke: #9b9488; stroke-width: 2; stroke-linecap: round; stroke-dasharray: 8 9; filter: url(#rough); }
     </style>
   </defs>
 
-  <rect class="bg" width="1200" height="520"/>
-  <rect class="panel" x="36" y="36" width="1128" height="448" rx="18"/>
+  <rect class="paper" width="900" height="360" rx="18"/>
+  <path class="ink" d="M28 25 C250 16 635 18 870 26 C885 93 883 260 871 333 C655 345 249 342 30 333 C20 248 20 109 28 25Z"/>
 
-  <text class="title" x="76" y="90">Forward proxy</text>
-  <text class="small" x="76" y="122">The proxy represents the client side of the connection.</text>
+  <text class="title" x="52" y="65">Forward proxy</text>
+  <text class="muted" x="52" y="92">The proxy helps clients reach outside services.</text>
 
-  <rect class="zone" x="74" y="166" width="285" height="250" rx="16"/>
-  <text class="note" x="112" y="205">Private network</text>
-  <rect class="device" x="134" y="250" width="164" height="92" rx="14"/>
-  <text class="label" x="177" y="294">Client</text>
-  <text class="small" x="155" y="322">Laptop / app</text>
+  <path class="dash" d="M55 128 C105 120 190 121 247 129 C257 178 257 244 246 289 C191 298 102 298 55 289 C45 238 46 174 55 128Z"/>
+  <text class="small" x="89" y="154">private network</text>
 
-  <rect class="proxy" x="490" y="238" width="220" height="118" rx="18"/>
-  <text class="label" x="518" y="288">Forward</text>
-  <text class="label" x="542" y="318">Proxy</text>
+  <path class="soft" d="M88 177 C121 169 190 171 214 178 C222 197 222 233 214 249 C181 255 119 254 89 249 C80 226 80 197 88 177Z"/>
+  <path class="ink" d="M88 177 C121 169 190 171 214 178 C222 197 222 233 214 249 C181 255 119 254 89 249 C80 226 80 197 88 177Z"/>
+  <text class="label" x="121" y="213">Client</text>
+  <text class="small" x="111" y="235">laptop / app</text>
 
-  <rect class="internet" x="848" y="238" width="220" height="118" rx="18"/>
-  <text class="label" x="894" y="288">Internet</text>
-  <text class="small" x="900" y="318">Website / API</text>
+  <path class="proxy-fill" d="M368 165 C409 157 499 158 533 166 C545 185 544 235 533 251 C493 259 409 258 368 250 C358 229 358 186 368 165Z"/>
+  <path class="ink" d="M368 165 C409 157 499 158 533 166 C545 185 544 235 533 251 C493 259 409 258 368 250 C358 229 358 186 368 165Z"/>
+  <text class="label" x="397" y="202">Forward</text>
+  <text class="label" x="415" y="229">proxy</text>
 
-  <path class="line" d="M 302 297 L 474 297"/>
-  <path class="line" d="M 714 297 L 832 297"/>
+  <path class="server-fill" d="M677 165 C716 158 800 158 835 166 C846 186 846 232 834 250 C797 258 719 258 678 250 C667 228 667 187 677 165Z"/>
+  <path class="ink" d="M677 165 C716 158 800 158 835 166 C846 186 846 232 834 250 C797 258 719 258 678 250 C667 228 667 187 677 165Z"/>
+  <text class="label" x="719" y="204">Website</text>
+  <text class="small" x="716" y="228">or external API</text>
 
-  <text class="small" x="374" y="274">Outbound request</text>
-  <text class="small" x="752" y="274">Proxy makes request</text>
+  <path class="arrow" d="M224 211 C270 206 307 207 351 209"/>
+  <text class="small" x="266" y="190">request</text>
 
-  <text class="note" x="455" y="414">Destination sees the proxy as the requester</text>
+  <path class="arrow" d="M542 209 C586 205 622 206 661 209"/>
+  <text class="small" x="565" y="190">proxied request</text>
+
+  <text class="accent" x="331" y="306">The destination sees the proxy as the requester.</text>
 </svg>
