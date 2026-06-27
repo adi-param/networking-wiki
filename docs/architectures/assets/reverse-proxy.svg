@@ -55,9 +55,9 @@
   <path class="arrow" d="M213 209 C258 204 303 204 333 207"/>
   <text class="small" x="244" y="188">request</text>
 
-  <path class="arrow" d="M521 191 C575 171 613 176 661 194"/>
-  <path class="arrow" d="M521 222 C573 251 616 256 661 258"/>
-  <text class="small" x="526" y="151">routes by host, path, or policy</text>
+  <path class="arrow" d="M521 191 C573 174 611 178 661 194"/>
+  <path class="arrow" d="M521 222 C571 249 614 255 661 258"/>
+  <text class="small" x="542" y="158">routes requests</text>
 
   <text class="accent" x="305" y="312">The client sees one endpoint; backend services stay private.</text>
 </svg>
