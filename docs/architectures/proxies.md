@@ -39,6 +39,8 @@ Your laptop does not go directly to the website. Instead, it sends the request t
 Laptop -> Forward Proxy -> Website
 ```
 
+![Forward proxy traffic flow](https://raw.githubusercontent.com/adi-param/networking-wiki/main/docs/architectures/assets/forward-proxy.svg)
+
 The website sees the proxy making the request. The proxy knows the original laptop, applies company policy, and then decides whether to allow the traffic.
 
 That is a forward proxy.
@@ -92,6 +94,8 @@ You open a website in your browser. You think you are talking to the application
 ```text
 Browser -> Reverse Proxy -> Application Server
 ```
+
+![Reverse proxy traffic flow](https://raw.githubusercontent.com/adi-param/networking-wiki/main/docs/architectures/assets/reverse-proxy.svg)
 
 The reverse proxy is standing in front of the servers.
 
